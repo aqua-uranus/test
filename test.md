@@ -23,7 +23,7 @@ Automated Targeting is a feature that allows you to optimize your target audienc
 With this feature, TikTok For Business platform dynamically will select the most relevant audience based on ad group information at different delivery phases. This drives optimal conversions.
 
 To enable the automated targeting feature, set `automated_targeting` to `ON` in the following scenarios:
-- Call [`/adgroup/create/`]((https://ads.tiktok.com/marketing_api/docs?id=1708503506967554)) to create an ad group
+- Call [`/adgroup/create/`](https://ads.tiktok.com/marketing_api/docs?id=1708503506967554) to create an ad group
 - Call [`/adgroup/update/`](https://ads.tiktok.com/marketing_api/docs?id=1708530959460353) to update an ad group
 
 
@@ -31,11 +31,7 @@ To enable the automated targeting feature, set `automated_targeting` to `ON` in 
 
 Split test, commonly referred to as A/B testing, is a tool that allows you to test different versions of your ads to determine which one works best.
 
-#### Split test structure
-
-When creating a split test for targeting, the targeting settings for the two ad groups must be different, while the ads under the two ad groups must be the same, as shown in the following figure:
-
-![Target Audience](./targetaudience.png)
+When creating a split test for targeting, the targeting settings for the two ad groups must be different, while the ads under the two ad groups must be the same.
 
 To conduct a split test for targeting, perform the following steps:
 
@@ -85,12 +81,8 @@ To enable the ACO feature, set `creative_material_mode` to `DYNAMIC` when creati
 ### Conduct split testing for creatives
 
 > **Note**: The Automated Creative Optimization feature is not supported for split testing.
-
-#### Split test structure
-
-When creating a split test for creatives, the ad group settings must be the same, while the ads settings under the two ad groups must be different, as shown in the following figure:
-
-![Creative](./creative.png)
+    
+When creating a split test for creatives, the ad group settings must be the same, while the ads settings under the two ad groups must be different.
 
 To conduct a split test for creatives, perform the following steps:
 
@@ -98,7 +90,7 @@ To conduct a split test for creatives, perform the following steps:
 1. Create a campaign  
 When calling [`/campaign/create/`](https://ads.tiktok.com/marketing_api/docs?id=1708583041422337) endpoint to create a campaign, set `split_test_variable` to `CREATIVE` in the API request to specify creatives for the split test variable.
 
-2. Get estimated numbers <a name="estimateid"></a>   
+2. Get estimated numbers <a name="estimateid1"></a>   
 Call [`/split_test/estimate/`](https://ads.tiktok.com/marketing_api/docs?id=1701890940286977) endpoint to obtain the estimated information such as audience number, proposed budget, and estimated power value.  
 You can modify the variable conditions and bids based on the response, and have a minimum of 80% power value to ensure that the split test can obtain reasonable test results. 
 
@@ -108,7 +100,7 @@ Call [`/adgroup/create/`](https://ads.tiktok.com/marketing_api/docs?id=170850350
 | Field | Data Type | Description |
 |:--------|:-------|:-----------------|
 |`is_split_test`| bool | Whether to create ad groups for split test:<li>`True`: set to `True` for the split test<li>`False`: the default value |
-|`split_test_estimate_id`| number | Pass the estimate ID returned in the [Get estimated numbers](#estimateid) request. |
+|`split_test_estimate_id`| number | Pass the estimate ID returned in the [Get estimated numbers](#estimateid1) request. |
 
 4. Create ads  
 Call [`/ad/create/`](https://ads.tiktok.com/marketing_api/docs?id=1708573052311553) to create ads for the split test and specify the following fields:
